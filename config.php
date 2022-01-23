@@ -1,4 +1,4 @@
-?php
+<?php
 session_start();
 //initialised the variables
 $username="";
