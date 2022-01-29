@@ -1,37 +1,39 @@
 <?php
-include_once('connect_tables.php');
-$query="select * from vax_centers";
-$result=mysqli_query($query);
+$link=mysqli_connect('localhost','avanthika','Abcd_1234','booking');
+if($link === false)
+{
+	die("ERROR:Could not connect".mysqli_connect_error());
+}
+echo "<center>";
+echo "<h1>Vaccination centers</h1>";
+$sql="SELECT * FROM vax_centers";
+if($result=mysqli_query($link,$sql)){
+	if(mysqli_num_rows($result)>0)
+	{
+		echo "<table>";
+			echo "<tr>";
+				echo "<th>id</th>";
+				echo "<th>name_of_center</th>";
+				echo "<th>slots</th>";
+				echo "<th>action</th>";
+			echo "</tr>";
+		while($row=mysqli_fetch_array($result)){
+			echo "<tr>";
+				echo "<td>". $row['id']. "</td>";
+				echo "<td>". $row['name_of_center']. "</td>";
+				echo "<td>". $row['slot']. "</td>";
+				echo "<td>". $row['action']. "</td>";
+			echo "</tr>";
+
+		}
+		echo "</table>";
+		mysqli_free_result($result);
+	}else {
+		echo "No records matching for your query found";
+	}
+}else{
+	echo "error:couldnot able to execute $sql.".mysqli_error($link);
+}
+mysqli_close($link);
+echo "</center>";
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Retrieve tables</title>
-</head>
-<body>
-	<table align="center" border="1px" style="width:600px line-height:40px;">
-		<tr>
-			<th colspan="4"><h2>Vaccination Centers</h2></th>
-		</tr>
-		<t>
-			<th>ID </th>
-			<th>Name of center</th>
-			<th>Available Slots</th>
-			<th>Action</th>
-		</t>
-		<?php
-			while($rows=mysqli_fetch_assoc($result))
-				{
-		?>        
-		         	<tr>
-		         		<td><?php echo $rows['id']; ?></td>
-		         		<td><?php echo $rows['name_of_center']; ?></td>
-		         		<td><?php echo $rows['slots']; ?></td>
-		         		<td><?php echo $rows['action']; ?></td>
-		         	</tr>
-		<?php 
-				}
-		?>
-	</table>
-</body>
-</html>
