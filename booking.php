@@ -27,42 +27,41 @@ if($_SESSION['login_user']=='admin')
 					<input type="text" name="age" size="50" maxlength="25"></h4>
 				<br><br>
 				<h4><p>Enter your DOB: </p>&nbsp;&nbsp;&nbsp;
-				<input type="date" name="date" ></h4>
-				<br>
-				<form><p>Sex: </p>    
+				<input type="text" name="dob" placeholder="yyyy-mm-dd"></h4>
+				<br><br>
+				<p>Sex: </p>    
 					<input type="radio" name="sex" value="male">Male
 					<input type="radio" name="sex" value="female">Female
 					<input type="radio" name="sex" value="transgender">Transgender
 					<input type="radio" name="sex" value="others">Others
 				<br><br><br>
-				</form>
-				<form><p>Vaccine required: </p>&nbsp;
+				
+				<p>Vaccine required: </p>&nbsp;
 					<input type="checkbox" name="vaccine" value="Covishield">Covishield
 					<input type="checkbox" name="vaccine" value="Covaxin">Covaxin
 					<input type="checkbox" name="vaccine" value="Sputnik">Sputnik
 		
-				<br><br></form>
-				<form><p>dose: </p>&nbsp;
+				<br><br>
+				<p>dose: </p>&nbsp;
 					<input type="checkbox" name="dose" value="first">1st Dose
 					<input type="checkbox" name="dose" value="second">2nd Dose
 			
-				<br><br></form>
-		
+				<br><br>
 				<form action="upload.php" method="post" enctype="multipart/form-data">
 					<p>Upload your Adhaar card here: &nbsp;
 						<input type="file" name="file"><br>
 						<strong>Note: Only .jpg,.png, .jpeg files under file size 5MB must be uploaded</strong>		</p>
-				</form>
+				</form><br><br>
 			
-				<form><p>Select State: </p>
+				<p>Select State: </p>
 					<select name="state" size="1">
 						<option value="Kerala"> Kerala</option>
 						<option value="Tamil Nadu">Tamil Nadu</option>
 						<option value="Karnataka">Karnataka</option>
 						<option value="Andhra Pradesh">Andhra pradesh</option>
 					</select>
-				<br></form>
-				<form><p>Select District: </p>
+				<br><br>
+				<p>Select District: </p>
 					<select name="district" size="1">
 						<option value="Malappuram">Malappuram</option>
 						<option value="Kozhikkode">Kozhikode</option>
@@ -72,7 +71,7 @@ if($_SESSION['login_user']=='admin')
 			
 		
 
-					<br></form>
+					<br><br>
 			
 				<form action="dist.php" method="post">
     				<input type="submit" value="Search for vaccination centers" name="submit">
