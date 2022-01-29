@@ -22,7 +22,8 @@ if($result=mysqli_query($link,$sql)){
 				echo "<td>". $row['id']. "</td>";
 				echo "<td>". $row['name_of_center']. "</td>";
 				echo "<td>". $row['slot']. "</td>";
-				echo "<td>". $row['action']. "</td>";
+				echo "<td>". $row['action']. 
+				"<a href='book.php'>Book</a></td>";
 			echo "</tr>";
 
 		}
