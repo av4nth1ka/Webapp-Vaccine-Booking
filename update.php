@@ -27,8 +27,8 @@ $id=$_REQUEST['id'];
 $name_of_center =$_REQUEST['name_of_center'];
 $slot=$_REQUEST['slot'];
 $user = $_SESSION["user"];
-$update="update vac_center set slot='".$slot."',
-name_of_center='".$name_of_center."'";
+$update="update vac_center set slot='".$slot."', 
+name_of_center='".$name_of_center."' where id='".$id."'";
 mysqli_query($link, $update) or die(mysqli_error());
 $status = "Record Updated Successfully. </br></br>
 <a href='view.php'>View Updated Record</a>";
