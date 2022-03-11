@@ -30,7 +30,7 @@ if(isset($_POST['reg_user']))
 		$stmti->bind_param('sis',$username,$mobileno,$password);
 		$stmti->execute();
 		$stmti->close();
-        $_SESSION['username']=$username;    //implementing sessions
+        	$_SESSION['username']=$username;    //implementing sessions
 		$_SESSION['success']="You are now logged in";
 		header('location:contents.php');
 	}
@@ -56,7 +56,7 @@ if(isset($_POST['login_user']))
     } 
     else 
     {
-    	$_SESSION['mobileno']=$mobileno;
+    		$_SESSION['mobileno']=$mobileno;
 		$_SESSION['success']="You are now logged in";
      	header('location:contents.php');
     }
