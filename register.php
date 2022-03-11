@@ -1,36 +1,31 @@
-<?php include('config.php')?>
+<?php include('config.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Register form</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+   
+    <title>Register</title>
 </head>
 <body>
-
-	<div class="header">
-		<h2>Register</h2>
-	</div>
-	<form method="post" action="register.php">
-		
-		<div class="input-group">
-			<label>Name:</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
-		</div>
-		<div class="input-group">
-			<label>Mobile Number:</label>
-			<input type="number" name="mobileno" value="<?php echo $mobileno; ?>">
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password"value="<?php echo $password;?>">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="reg_user">Register</button>
-		</div>
-		<p>
-			Already have an account? <a href="login.php">Login</a>
-		</p>
-	</form>
-
+<main><center>
+    <form action="register.php" method="post">
+        <h1>Sign Up</h1>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+        </div><br><br>
+        <div>
+            <label for="mobileno">Mobile Number:</label>
+            <input type="mobileno" name="mobileno" id="mobileno">
+        </div><br><br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </div><br><br>
+        
+        <button type="submit" name="reg_user">Register</button>
+        <footer>Already a member? <a href="login.php">Login here</a></footer>
+    </form>
+</center>
+</main>
 </body>
 </html>
